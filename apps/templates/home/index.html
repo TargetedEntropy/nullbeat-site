@@ -21,63 +21,26 @@
     <div class="content-wrapper">
 
       <div class="row">
+        {% for stats in stats_data -%}
+          
+          
         <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
               <div class="row">
                 <div class="col-9">
                   <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">69,420</h3>
+                    <h3 class="mb-0">{{stats_data[stats]}}</h3>
                   </div>
                 </div>
               </div>
-              <h6 class="text-muted font-weight-normal">Shulker Stock</h6>
+              <h6 class="text-muted font-weight-normal">{{stats}}</h6>
             </div>
           </div>
         </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-9">
-                  <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">69</h3>
-                  </div>
-                </div>
-              </div>
-              <h6 class="text-muted font-weight-normal">Delivery Characters</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-9">
-                  <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">12</h3>
-                  </div>
-                </div>
-              </div>
-              <h6 class="text-muted font-weight-normal">Delivery Queue</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-9">
-                  <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">420,069</h3>
-                  </div>
-                </div>
-              </div>
-              <h6 class="text-muted font-weight-normal">Overall Item Count</h6>
-            </div>
-          </div>
-        </div>
-      </div>
+
+        {% endfor %}
+
 
 
 

@@ -10,38 +10,40 @@
 
 {% block content %}
 
+
+
     <div class="content-wrapper">
       <div class="page-header">
         <h3 class="page-title"> Available Items </h3>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Items</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Items</li>
+            <li class="breadcrumb-item active" aria-current="page">Storage</li>
           </ol>
         </nav>
       </div>
+
+      {% for json in json_data -%}
+  
       <div class="row">
         <div class="col-lg-12 grid-margin">
+          
           <div class="card">
+            
             <div class="card-body">
+              {{ json['item_name']}}
               <div class="row icons-list">
+                {% for item in json["item_contents"] -%}
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="icon-32 netherite-sword"></div> Netherite Sword
+                  <div class="icon-32 {{ item }}"></div> {{ item }}
                 </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="icon-32 netherite-helmet"></div> Netherite Helmet
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="icon-32 netherite-boots"></div> Netherite Boots
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                  <div class="icon-32 netherite-chestplate"></div> Netherite Chestplate
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
 
 {% endblock content %}
