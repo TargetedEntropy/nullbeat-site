@@ -6,4 +6,4 @@ This is the frontend for the Magic Storage system.
 ![Dashboard](https://i.imgur.com/ruWFhYD.png "Dashboard")
 
 ### Container View
-![ExampleImage](https://i.imgur.com/kMVC5Gz.png "Contaners")
+![ExampleImage](https://i.imgur.com/GHcqySv.png "Contaners")
