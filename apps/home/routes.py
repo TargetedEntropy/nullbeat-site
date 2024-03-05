@@ -13,7 +13,7 @@ import requests
 @login_required
 def index():
     try:
-        stats = requests.get("http://10.0.0.39:8000/stats")
+        stats = requests.get("http://10.0.0.39:25565/stats")
     except Exception as error:
         raise Exception(f"Unable to get access API Data, error: {error}")
         
@@ -25,7 +25,7 @@ def index():
 def route_storage():
 
     try:
-        req = requests.get("http://10.0.0.39:8000/item")
+        req = requests.get("http://10.0.0.39:25565/item")
     except Exception as error:
         raise Exception(f"Unable to get access API Data, error: {error}")
         
@@ -36,19 +36,13 @@ def route_storage():
     for d in data:
 
         item_data = {}
-        item_name = d['item_name']
-        contents = json.loads(d['item_contents'])
+        item_name =  str(d['name']).split(":")[1].capitalize().replace("_", " ")
+        item_texture = f"{str(d['name']).split(':')[1]}.png"
 
-        item_contents = []
-        for content in contents:
-            item_id = content['id']
-            item_id = item_id.replace("minecraft:", "")
-            item_id = item_id.replace("_", "-")
-            
-            item_contents.append(item_id)
 
         item_data['item_name'] = item_name
-        item_data['item_contents'] = item_contents
+        item_data['item_texture'] = item_texture
+        
         all_data.append(item_data)
         
         
